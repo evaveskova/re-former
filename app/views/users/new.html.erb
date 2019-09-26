@@ -1,4 +1,4 @@
-<form action="<%=users_path %>" method="POST" accept-charset="UTF-8">
+<!-- <form action="<%=users_path %>" method="POST" accept-charset="UTF-8">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
   <label for='username'>Name:</label>
   <input name="user[username]" type="text"/>
@@ -10,4 +10,14 @@
   <input name="user[password]" type="password"/>
 
   <input type = "submit" value ="sign-up"/>
-</form>
+</form> -->
+
+<%= form_tag(users_path, method: "post") do %>
+	<%= label_tag "lname", "Name" %>
+	<%= text_field_tag 'username' %>
+	<%= label_tag "lpassword", "Password" %>
+	<%= password_field_tag 'password' %>
+	<%= label_tag "lemail", "Email" %>
+	<%= email_field_tag "email" %>
+	<%= submit_tag "Sign Up" %>
+<% end %> 
