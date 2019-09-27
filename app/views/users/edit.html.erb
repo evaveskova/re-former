@@ -1,0 +1,19 @@
+<%= form_for(@user) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :username, class: 'form-control', placeholder: 'John Doe' %>
+
+<br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control', placeholder: 'john@email.com'%>
+
+<br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control', placeholder: 'password'%>
+
+<br>
+
+  <%= f.submit "Sign-Up", class: "btn btn-primary" %>
+<% end %>
