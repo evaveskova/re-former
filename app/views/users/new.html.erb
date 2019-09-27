@@ -12,12 +12,32 @@
   <input type = "submit" value ="sign-up"/>
 </form> -->
 
-<%= form_tag(users_path, method: "post") do %>
-	<%= label_tag "lname", "Name" %>
-	<%= text_field_tag 'username' %>
-	<%= label_tag "lpassword", "Password" %>
-	<%= password_field_tag 'password' %>
-	<%= label_tag "lemail", "Email" %>
-	<%= email_field_tag "email" %>
-	<%= submit_tag "Sign Up" %>
-<% end %> 
+<%#= form_tag(users_path, method: "post") do %>
+	<%#= label_tag "lname", "Name" %>
+	<%#= text_field_tag 'username' %>
+	<%#= label_tag "lpassword", "Password" %>
+	<%#= password_field_tag 'password' %>
+	<%#= label_tag "lemail", "Email" %>
+	<%#= email_field_tag "email" %>
+	<%#= submit_tag "Sign Up" %>
+<%# end %>
+
+<%= form_for(@user) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :username, class: 'form-control', placeholder: 'John Doe' %>
+
+<br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control', placeholder: 'john@email.com'%>
+
+<br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control', placeholder: 'password'%>
+
+<br>
+
+  <%= f.submit "Sign-Up", class: "btn btn-primary" %>
+<% end %>
